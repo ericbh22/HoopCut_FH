@@ -355,7 +355,7 @@ def uploaded_file(filename):
     return send_from_directory(app.config['UPLOAD_FOLDER'], filename)
 
 
-@app.route("/toggle-auto-ai", methods=["POST"])
+@app.route("/toggle-auto-ai", methods=["POST"]) # turns on and off auto ai 
 def toggle_ai():
     data = request.get_json()
     enabled = data.get("enabled", True)
@@ -367,7 +367,7 @@ def toggle_ai():
     config.auto_ai = enabled
     
     return jsonify({"status": "ok", "auto_ai": enabled})
-@app.route("/toggle-three",methods=["POST"])
+@app.route("/toggle-three",methods=["POST"]) # enabling three point adjust 
 def toggle_three():
     data = request.get_json()
     enabled = data.get("enabled",False)
@@ -386,6 +386,9 @@ def get_settings():
 
 @app.route("/start-processing", methods=["POST"])
 def start_processing():
+    """
+    Function Description: Starts the loading bar for tracking 
+    """
     video = request.files["video"]
     filename = video.filename
     session_id = str(uuid4())
