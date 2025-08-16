@@ -92,36 +92,42 @@ git clone https://github.com/ericbh22/HoopCut_FH.git
 cd HoopCut_FH
 ```
 
-### Development Environment
+2. **Create a virtual environment**
+```bash
+python -m venv venv
 
-1. **Create a virtual environment**
-   ```bash
-   python -m venv venv
-   ```
+or depending on version/os
 
-2. **Activate virtual environment**
-   ```bash
-   # On macOS/Linux
-   source venv/bin/activate
-   
-   # On Windows
-   venv\Scripts\activate
-   ```
+python3 -m venv venv 
+```
 
-3. **Install dependencies ( may take a few minutes)**
-   ```bash
-   pip install -r requirements.txt
-   ```
+3. **Activate virtual environment**
+```bash
+# On macOS/Linux
+source venv/bin/activate
+
+# On Windows
+venv\Scripts\activate
+```
+
+4. **Install dependencies (may take a few minutes)**
+```bash
+pip install -r requirements.txt
+```
+
+
+5. Run the Application
+```bash
+python main\app.py 
+or on mac
+python3 main/app.py 
+```
+6. Feel free to use our test in provided_test
 
 **Additional Requirements:**
 - Ensure FFMpeg is installed on your system
 - If errors occur, verify GPU version of PyTorch is installed
 
-### 4. Run the Application
-```bash
-python main\app.py 
-```
-### 5. Feel free to use our test in provided_test
 
 The application will be hosted locally and accessible through your web browser. 
 
