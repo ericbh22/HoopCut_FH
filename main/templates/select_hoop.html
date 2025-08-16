@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Hoop - {{ project_name }}</title>
+    <link rel="stylesheet" href="../static/css/select_hoop.css">
+    
+</head>
+<body>
+    <div class="container">
+        <h1>Select Hoop Location</h1>
+        <p>Project: <strong>{{ project_name }}</strong></p>
+        
+        <div class="instructions">
+            <strong>Instructions:</strong> Click on two points to define the basketball hoop location:
+            <ol>
+                <li>Click on the left edge of the hoop rim</li>
+                <li>Click on the right edge of the hoop rim</li>
+            </ol>
+        </div>
+        <!-- <div class="mode-toggle" style="margin: 10px 0; text-align: center;">
+            <button onclick="toggleVideoMode()" style="background-color: #28a745; color: white; border: none; padding: 8px 16px; border-radius: 4px; cursor: pointer;">
+                Toggle Video Controls (Press V)
+            </button>
+        </div>   -->
+        {% if video_url %}
+        <div class="video-container">
+            <video id="videoPlayer" controls>
+                <source src="{{ video_url }}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <canvas id="canvasOverlay" class="canvas-overlay"></canvas>
+        </div>
+        
+        <div id="selectedPoints" class="selected-point" style="display: none;">
+            <strong>Selected Points:</strong>
+            <div id="point1" style="display: none;">Point 1: <span id="coords1"></span></div>
+            <div id="point2" style="display: none;">Point 2: <span id="coords2"></span></div>
+        </div>
+        
+        <div class="instructions" id="clickInstructions">
+            <strong>Step 1:</strong> Click on the first point of the basketball hoop.
+        </div>
+        <form id="upload-form" method="post" enctype="multipart/form-data"></form>
+            <button id="submitBtn" type ="submit" class="submit-btn" onclick="submitHoopLocation()" disabled>
+                Submit Hoop Location (0/2 points selected)
+            </button>
+        </form>
+
+        {% else %}
+        <div class="error">
+            <strong>Error:</strong> Video file not found. Please try uploading the video again.
+        </div>
+        {% endif %}
+    </div>
+    <script>
+    // Define project name for external script
+    const PROJECT_NAME = "{{ project_name }}";
+</script>
+<script src="../static/js/select_hoop.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HoopCut - Basketball Highlight Editing</title>
+    <link rel="stylesheet" href="../static/css/homepage.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-left">
+            <a href = "{{ url_for('home') }}">
+            <img href="{{ url_for('home') }}"  src ="../static/assets/hc.png" class = "logo">
+            </a>
+        </div>
+        </div>
+        <div class="navbar-right">
+            <div class="nav-icon" title="Info"><i data-lucide="info"></i></div>
+            <div class="nav-icon" title="Settings" onclick="toggleSettingsPopup()"><i data-lucide="settings"></i></div>
+    </nav>
+    
+    
+    <main class="main-content">
+        <section class="hero-section">
+            <h1 class="tagline">Effortless Automate Basketball Highlight Editing!</h1>
+            
+            <div class="carousel-container">
+                <div class="carousel">
+                    <div class="carousel-item item-a">
+                        <img
+                        src="{{ url_for('static', filename='assets/slide 1 r.png') }}"
+                        alt="Automatic highlight detection"
+                        loading="lazy"
+                        decoding="async"
+                        draggable="false"
+                        />
+                    </div>
+                    <div class="carousel-item item-b">
+                        <img
+                        src="{{ url_for('static', filename='assets/slide 2.png') }}"
+                        alt="Instant replay & review"
+                        loading="lazy"
+                        decoding="async"
+                        draggable="false"
+                        />
+                    </div>
+                    <div class="carousel-item item-f">
+                        <img
+                        src="{{ url_for('static', filename='assets/slide 2 refined.png') }}"
+                        alt="Smart editing timeline"
+                        loading="lazy"
+                        decoding="async"
+                        draggable="false"
+                        />
+                    </div>
+                </div>
+                <button class="nav-button nav-prev" aria-label="Previous slide"></button>
+                <button class="nav-button nav-next" aria-label="Next slide"></button>
+            </div>
+            
+            <a href="{{ url_for('index') }}" class="cta-button">Get Started</a>
+        </section>
+        <div id="overlay" class="hidden" onclick="toggleSettingsPopup()"></div>
+            <div id="settingsPopup" class="popup hidden">
+                <button class="close-btn" onclick="toggleSettingsPopup()">×</button>
+                <h3>Settings</h3>
+                <div class="setting-item">
+                    <span>Auto AI Detection</span>
+                    <label class="switch">
+                        <input type="checkbox" id="autoAiToggle" onchange="updateAutoAi()" />
+                        <span class="slider"></span>
+                    </label>
+                </div>
+                <div class="setting-item">
+                    <span>Three Pointer Optimisation</span>
+                    <label class="switch">
+                        <input type="checkbox" id="threePointToggle" onchange="updateThree()" />
+                        <span class="slider"></span>
+                    </label>
+                </div>
+                
+            </div>
+    </main>
+    <script src="../static/js/home.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

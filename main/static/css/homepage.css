@@ -1,0 +1,390 @@
+ *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 16px 32px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .navbar-left {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .logo {
+            width: 128px;
+            height: 47px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .brand-name {
+            font-size: 24px;
+            font-weight: 600;
+            color: #2c3e50;
+    text-decoration: none;
+    color: inherit;
+        }
+        
+        .navbar-right {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        
+        .nav-icon {
+            width: 32px;
+            height: 32px;
+            background: #f0f0f0;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: #666;
+        }
+        
+        .nav-icon:hover {
+            background: #e0e0e0;
+            transform: scale(1.1);
+        }
+        
+        .main-content {
+            padding-top: 80px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .hero-section {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .tagline {
+            font-size: clamp(32px, 5vw, 48px);
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 80px;
+            max-width: 800px;
+            line-height: 1.2;
+        }
+        
+        .carousel-container {
+            position: relative;
+            perspective: 1400px;
+            margin-bottom: 80px;
+        }
+        
+        .carousel {
+            width: clamp(350px, 50vw, 500px);
+            height: clamp(245px, 35vw, 350px);
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.8s cubic-bezier(0.4, 0.0, 0.2, 1);
+        }
+        
+        .carousel-item {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: #e8e8e8;
+            border: 2px solid #d0d0d0;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: clamp(32px, 6vw, 48px);
+            font-weight: 300;
+            color: #7a7a7a;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .carousel-item.active {
+            box-shadow: 0 16px 48px rgba(0, 0, 0, 0.15);
+        }
+        
+        .item-a {
+            transform: rotateY(0deg) translateZ(clamp(245px, 35vw, 350px));
+        }
+        
+        .item-b {
+            transform: rotateY(120deg) translateZ(clamp(245px, 35vw, 350px));
+        }
+        
+        .item-f {
+            transform: rotateY(240deg) translateZ(clamp(245px, 35vw, 350px));
+        }
+        
+        .nav-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 48px;
+            height: 48px;
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            color: #666;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+        
+        .nav-button:hover {
+            background: white;
+            color: #333;
+            box-shadow: 0 6px 24px rgba(0, 0, 0, 0.15);
+            transform: translateY(-50%) scale(1.05);
+        }
+        
+        .nav-button:active {
+            transform: translateY(-50%) scale(0.95);
+        }
+        
+        .nav-prev {
+            left: -80px;
+        }
+        
+        .nav-next {
+            right: -80px;
+        }
+        
+        .nav-prev::before {
+            content: '‹';
+        }
+        
+        .nav-next::before {
+            content: '›';
+        }
+        
+        .cta-button {
+            background: #d0d0d0;
+            color: #666;
+            border: none;
+            padding: 18px 36px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+        }
+        
+        .cta-button:hover {
+            background: #c0c0c0;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+            transform: translateY(-2px);
+        }
+        
+        .cta-button:active {
+            transform: translateY(0);
+        }
+        
+        .cta-button::after {
+            content: '→';
+            font-size: 18px;
+        }
+        
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 12px 20px;
+            }
+            
+            .brand-name {
+                font-size: 20px;
+            }
+            
+            .nav-button {
+                width: 40px;
+                height: 40px;
+                font-size: 16px;
+            }
+            
+            .nav-prev {
+                left: -60px;
+            }
+            
+            .nav-next {
+                right: -60px;
+            }
+            
+            .tagline {
+                margin-bottom: 60px;
+            }
+            
+            .carousel-container {
+                margin-bottom: 60px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .nav-prev {
+                left: -50px;
+            }
+            
+            .nav-next {
+                right: -50px;
+            }
+            
+            .nav-button {
+                width: 36px;
+                height: 36px;
+                font-size: 14px;
+            }
+        }
+/* Dark overlay */
+#overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+
+        /* Popup container */
+        .popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 24px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            width: 320px;
+            font-family: system-ui, sans-serif;
+        }
+
+        /* Hide class */
+        .hidden {
+            display: none !important;
+        }
+
+        /* Close button */
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 14px;
+            background: none;
+            border: none;
+            font-size: 20px;
+            color: #888;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+        .close-btn:hover {
+            color: #000;
+        }
+
+        /* Popup title */
+        .popup h3 {
+            font-size: 20px;
+            margin-bottom: 24px;
+            color: #222;
+            text-align: center;
+        }
+
+        /* Each setting */
+        .setting-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        /* iOS-style toggle switch */
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 52px;
+            height: 28px;
+        }
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            background-color: #ccc;
+            transition: 0.3s;
+            border-radius: 34px;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+        .slider::before {
+            position: absolute;
+            content: "";
+            height: 20px;
+            width: 20px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            border-radius: 50%;
+            transition: 0.3s;
+        }
+        input:checked + .slider {
+            background-color: #34c759;
+        }
+        input:checked + .slider::before {
+            transform: translateX(24px);
+        }
+
+    .carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;    /* use 'contain' if you don't want any cropping */
+  display: block;
+  border-radius: inherit; /* keeps the slide’s rounded corners */
+  pointer-events: none;   /* optional: avoids accidental drags */
+}

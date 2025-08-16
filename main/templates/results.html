@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Download Clips</title>
+</head>
+<body>
+  <h1>Preview Your Highlights</h1>
+  <ul>
+    {% for clip in clips %}
+      <li>
+        <p>{{ clip }}</p>
+        <video width="480" controls>
+          <source src="{{ url_for('download_clip', filename=clip) }}" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </li>
+    {% endfor %}
+  </ul>
+</body>
+</html>

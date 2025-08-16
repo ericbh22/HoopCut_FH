@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>HoopCut</title>
+  <link rel="stylesheet" href="../static/css/index.css">
+  <script src="../static/js/index.js" defer></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+  <div class="container">
+  <nav class="navbar">
+        <div class="navbar-left">
+          <a href = "{{ url_for('home') }}">
+            <img href="{{ url_for('home') }}"  src ="../static/assets/hc.png" class = "logo">
+            </a>
+            
+        </div>
+        <div class="navbar-right">
+            <div class="nav-icon" title="Info"><i data-lucide="info"></i></div>
+            <div class="nav-icon" title="Settings" onclick="toggleSettingsPopup()"><i data-lucide="settings"></i></div>
+        </div>
+    </nav>
+    <main class="content">
+      <section class="recent-footage">
+        <div class="header">
+          <div class="header-content" id="headerContent">
+            <h2>All Footage</h2>
+            <div class="header-actions">
+              <button class="search-toggle" onclick="toggleSearch()" title="Search"><i data-lucide="search"></i></button>
+            </div>
+          </div>
+          
+          <!-- Search container -->
+          <div class="search-container" id="searchContainer">
+            <input type="text" class="search-input" id="searchInput" placeholder="Search projects...">
+            <span class="search-icon"><i data-lucide="search"></i></span>
+            
+          </div>
+        </div>
+        
+        <ul class="video-list" id="videoList">
+          {% for project in projects %}
+            <li data-project-name="{{ project.name.lower() }}">
+              <div class="project-item">
+                <a href="{{ url_for('project_view', project_name=project.name) }}" class="project-info">
+                  <strong>{{ project.name }}</strong><br>
+                  <span>{{project.makes}} Makes, {{project.misses}} Misses, {{project.total_vids}} Total Clips</span>
+                </a>
+                <div class="project-actions">
+                  <button class="delete-btn" onclick="deleteProject('{{ project.name }}', event)" title="Delete Project"><i data-lucide="trash"></i></button>
+                </div>
+              </div>
+            </li>
+          {% else %}
+            <li>No past projects yet.</li>
+          {% endfor %}
+        </ul>
+        
+        <!-- No results message -->
+        <div class="no-results" id="noResults">
+          No projects found matching your search.
+        </div>
+      </section>
+
+      <section class="new-project">
+        <h2>New Project</h2>
+        <form id="upload-form" method="post" enctype="multipart/form-data">
+          <div id="drop-area">
+            <button class="cta-button" type="button" onclick="fileElem.click()">
+              <i data-lucide="clapperboard"></i>
+              <span>Get Started</span>
+            </button>
+            <p>or drop files here</p>
+            <input type="file" id="fileElem" name="video" accept=".mp4,.mov" required>
+            <video class="preview" id="preview" controls style="display:none;"></video>
+            <!-- Start Editing button appears only when a file is selected -->
+            <button id="start-editing-btn" type="submit" style="display: none; margin-top: 15px;">
+              Start Editing
+            </button>
+          </div>
+
+          <button type="submit" style="display:none;">Submit</button>
+        </form>
+      </section>
+      <div id="overlay" class="hidden" onclick="toggleSettingsPopup()"></div>
+            <div id="settingsPopup" class="popup hidden">
+                <button class="close-btn" onclick="toggleSettingsPopup()">×</button>
+                <h3>Settings</h3>
+                <div class="setting-item">
+                    <span>Auto AI Detection</span>
+                    <label class="switch">
+                        <input type="checkbox" id="autoAiToggle" onchange="updateAutoAi()" />
+                        <span class="slider"></span>
+                    </label>
+                </div>
+                <div class="setting-item">
+                    <span>Three Pointer Optimisation</span>
+                    <label class="switch">
+                        <input type="checkbox" id="threePointToggle" onchange="updateThree()" />
+                        <span class="slider"></span>
+                    </label>
+                </div>
+                <div class="setting-item-2">
+                    <button class="delete-btn delete-all-btn" onclick="deleteAll(event)" title="Delete Project">
+                      <i data-lucide="trash"></i> Delete All Projects
+                    </button>
+                </div>
+            </div>
+    </main>
+  </div>
+
+  <script>
+    lucide.createIcons();
+  </script>
+
+</body>
+</html>

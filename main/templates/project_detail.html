@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>{{ project }} Results – HoopCut</title>
+  <link rel="stylesheet" href="../static/css/project_detail.css">
+  <script src="../static/js/project.js" defer></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body data-project="{{ project }}">
+  <nav class="navbar">
+        <div class="navbar-left">
+            <a href = "{{ url_for('home') }}">
+            <img href="{{ url_for('home') }}"  src ="../static/assets/hc.png" class = "logo">
+            </a>
+        </div>
+        </div>
+        <div class="navbar-right">
+            <div class="nav-icon" title="Info"><i data-lucide="info"></i></div>
+            <div class="nav-icon" title="Settings" onclick="toggleSettingsPopup()"><i data-lucide="settings"></i></div>
+            
+        </div>
+    </nav>
+</header>
+
+  <h1 class="project-title">{{ project }} Results</h1>
+
+<div class="clips-section">
+  <div class="clips-header">
+    <div class="spacer"></div>
+    <div class="actions">
+      <button class="download-all-btn" onclick="downloadAll()">Download All</button>
+      <button class="download-all-btn" onclick="downloadPlots()">Download Plots</button>
+    </div>
+  </div>
+
+  <div class="clips-container">
+    {% for clip in clips %}
+      <div class="clip-card" data-filename="{{ clip }}">
+        <video width="100%" controls>
+          <source src="{{ url_for('download_clip', project_name=project, filename=clip) }}" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <div class="buttons">
+          <button class="make-btn {% if 'make' in clip %}active{% endif %}">Make</button>
+          <button class="miss-btn {% if 'miss' in clip %}active{% endif %}">Miss</button>
+          <button class="download-btn" onclick="downloadClip('{{ clip }}', '{{ project }}')"><i data-lucide ="download"></i></button>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+<div id="overlay" class="hidden" onclick="toggleSettingsPopup()"></div>
+            <div id="settingsPopup" class="popup hidden">
+                <button class="close-btn" onclick="toggleSettingsPopup()">×</button>
+                <h3>Settings</h3>
+                <div class="setting-item">
+                    <span>Auto AI Detection</span>
+                    <label class="switch">
+                        <input type="checkbox" id="autoAiToggle" onchange="updateAutoAi()" />
+                        <span class="slider"></span>
+                    </label>
+                </div>
+                <div class="setting-item">
+                    <span>Three Pointer Optimisation</span>
+                    <label class="switch">
+                        <input type="checkbox" id="threePointToggle" onchange="updateThree()" />
+                        <span class="slider"></span>
+                    </label>
+                </div>
+            </div>
+</body>
+<script>
+    lucide.createIcons();
+</script>
+</html>
+
