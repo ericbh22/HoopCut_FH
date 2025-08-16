@@ -86,7 +86,7 @@ Allows users to relabel mislabeled footage into makes or misses
 
 ## 🚀 Getting Started
 
-### 1. Clone the Repository
+### 1. Clone the Repository (if you have a github token) or Download the EXE
 ```bash
 git clone https://github.com/eribh22/HoopCut_FH.git
 cd HoopCut
