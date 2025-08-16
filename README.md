@@ -119,7 +119,7 @@ cd HoopCut
 
 ### 4. Run the Application
 ```bash
-python main\detector.py 
+python main\app.py 
 ```
 
 The application will be hosted locally and accessible through your web browser. 
