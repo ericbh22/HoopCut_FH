@@ -88,7 +88,7 @@ Allows users to relabel mislabeled footage into makes or misses
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/eribh22/HoopCut.git
+git clone https://github.com/eribh22/HoopCut_FH.git
 cd HoopCut
 ```
 
@@ -127,7 +127,7 @@ The application will be hosted locally and accessible through your web browser.
 ---
 ## 🚀 Optimal Usage and FAQ
 ### 1. What footage can I use?
-You can use all footage, but side on performs the best. The model has been trained on all angles, but side on performance works best 
+The model has been trained on all angles, so all footage works, but side on works best. Try to make sure the hoop moves minimally during the footage.
 ### 2. How long does it take? 
 Depending on GPU, the time varies greatly.
 ### 3. Should I use the auto AI hoop detection?
@@ -142,7 +142,7 @@ Yes, it is recommended to use the auto AI detection over manual selection
 | Issue | Description |
 |-------|-------------|
 | 🎯 **Shot Angle Limitations** | Corner airballs may appear as makes due to single-angle implementation |
-| 🏀 **Three-Pointer Accuracy** | Lower accuracy on long-range shots due to distance causing visual ambiguity |
+| 🏀 **Three-Pointer Accuracy** | Lower accuracy ~ 75% on long-range shots due to distance causing visual ambiguity |
 | 🤾 **Non-Shot Detection** | Lobs and other non-shot attempts above the rim are incorrectly detected as shots |
 | 🎨 **Equipment Variations** | Model accuracy decreases with non-standard basketballs and hoops (e.g., rainbow-colored balls) |
 | 🌐 **Browser Compatibility** | Select hoop sometimes plays video instead (tested on Chrome and Zen Browser only) |
