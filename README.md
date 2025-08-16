@@ -89,7 +89,7 @@ Allows users to relabel mislabeled footage into makes or misses
 ### 1. Clone the Repository (if you have a github token) or Download the EXE
 ```bash
 git clone https://github.com/eribh22/HoopCut_FH.git
-cd HoopCut
+cd HoopCut_FH
 ```
 
 ### Development Environment
@@ -108,7 +108,7 @@ cd HoopCut
    venv\Scripts\activate
    ```
 
-3. **Install dependencies**
+3. **Install dependencies ( may take a few minutes)**
    ```bash
    pip install -r requirements.txt
    ```
@@ -121,6 +121,7 @@ cd HoopCut
 ```bash
 python main\app.py 
 ```
+### 5. Feel free to use our test in provided_test
 
 The application will be hosted locally and accessible through your web browser. 
 
