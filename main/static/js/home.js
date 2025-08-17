@@ -47,13 +47,19 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Settings popup functionality
 function toggleSettingsPopup() {
-    console.log("entering");
     const overlay = document.getElementById('overlay');
     const popup = document.getElementById("settingsPopup");
     
     if (overlay) overlay.classList.toggle('hidden');
     if (popup) popup.classList.toggle('hidden');
 }
+function toggleInfoPopup() {
+            const overlay = document.getElementById('overlay2');
+            const popup = document.getElementById('infoPopup');
+            
+            overlay.classList.toggle('hidden');
+            popup.classList.toggle('hidden');
+        }
 
 // Load settings from server
 async function loadSettings() {

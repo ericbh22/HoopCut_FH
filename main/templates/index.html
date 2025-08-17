@@ -17,7 +17,7 @@
             
         </div>
         <div class="navbar-right">
-            <div class="nav-icon" title="Info"><i data-lucide="info"></i></div>
+            <div class="nav-icon" title="Info" onclick="toggleInfoPopup()"><i data-lucide="info"></i></div>
             <div class="nav-icon" title="Settings" onclick="toggleSettingsPopup()"><i data-lucide="settings"></i></div>
         </div>
     </nav>
@@ -83,6 +83,27 @@
           <button type="submit" style="display:none;">Submit</button>
         </form>
       </section>
+        <div id="overlay2" class="hidden" onclick="toggleInfoPopup()">
+            <div id="infoPopup" class="popup hidden">
+                <button class="close-btn" onclick="toggleInfoPopup()">×</button>
+                <h3>HoopCut Info</h3>
+                <div class="setting-item-2">
+                    <span><strong>Best Settings:</strong> Auto Hoop Detection</span>
+                </div>
+                <div class="setting-item-2">
+                    <span><strong>For more info:</strong> <a href="https://github.com/ericbh22/HoopCut_FH" target="_blank" style="color: #e97132;">GitHub</a></span>
+                </div>
+                <div class="setting-item-2">
+                    <span><strong>Coming Soon:</strong> Shot Type Analysis</span>
+                </div>
+                <div class="setting-item-2">
+                    <span><strong>Any Errors:</strong> Open an issue on GitHub</span>
+                </div>
+                <div class="setting-item-2">
+                    <span><strong>Maintained By:</strong> HoopCut Team</span>
+                </div>
+            </div>
+        </div>
       <div id="overlay" class="hidden" onclick="toggleSettingsPopup()"></div>
             <div id="settingsPopup" class="popup hidden">
                 <button class="close-btn" onclick="toggleSettingsPopup()">×</button>

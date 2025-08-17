@@ -236,6 +236,15 @@ body {
             background: rgba(0, 0, 0, 0.5);
             z-index: 999;
         }
+        #overlay2 {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
 
         /* Popup container */
         .popup {
@@ -344,4 +353,13 @@ body {
         }
         .demo-btn:hover {
             background: #0056b3;
+        }
+
+        
+.setting-item-2 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 0;
+            border-bottom: 1px solid #eee;
         }

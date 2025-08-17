@@ -212,6 +212,7 @@ def download_all_plots(project):
             zipf.write(plot_path,arcname = filename)
     return send_file(zip_path,as_attachment=True)
 
+
 @app.route('/delete_project', methods=['POST'])
 def delete_project():
     try:

@@ -62,7 +62,13 @@ function updateLabel(filename, newLabel, project) {
   });
 }
 
-
+function toggleInfoPopup() {
+            const overlay = document.getElementById('overlay2');
+            const popup = document.getElementById('infoPopup');
+            
+            overlay.classList.toggle('hidden');
+            popup.classList.toggle('hidden');
+        }
 function downloadClip(filename, project) {
   const url = `/projects/${project}/clips/${filename}`;
   const a = document.createElement('a');

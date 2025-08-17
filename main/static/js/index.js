@@ -59,6 +59,14 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+function toggleInfoPopup() {
+            const overlay = document.getElementById('overlay2');
+            const popup = document.getElementById('infoPopup');
+            
+            overlay.classList.toggle('hidden');
+            popup.classList.toggle('hidden');
+        }
+
 
 function previewFile(file) {
   let reader = new FileReader();

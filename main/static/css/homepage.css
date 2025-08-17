@@ -1,12 +1,6 @@
- *{
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
+body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            background-color: #fafafa;
             min-height: 100vh;
             overflow-x: hidden;
         }
@@ -31,6 +25,10 @@
             align-items: center;
             gap: 12px;
         }
+        .tagline:first-child {
+            color: #e97132;
+            margin-bottom: 0;
+        }
         
         .logo {
             width: 128px;
@@ -44,8 +42,8 @@
             font-size: 24px;
             font-weight: 600;
             color: #2c3e50;
-    text-decoration: none;
-    color: inherit;
+            text-decoration: none;
+            color: inherit;
         }
         
         .navbar-right {
@@ -88,29 +86,41 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            max-width: 1200px;
+            max-width: 1800px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 30px;
         }
         
         .tagline {
-            font-size: clamp(32px, 5vw, 48px);
+            font-size: clamp(48px, 7.5vw, 60px);
             font-weight: 700;
             color: #2c3e50;
-            margin-bottom: 80px;
-            max-width: 800px;
+            margin-bottom: 65px;
+            max-width: 1200px;
             line-height: 1.2;
+            transform: translateY(-75px);
+            color: #000;
+            font-family: "Mona Sans", ui-sans-serif, system-ui, -apple-system,
+                       "Segoe UI", Roboto, Arial, sans-serif;
+                       margin-block-start: 0;
         }
+        .spacer {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0px;
+        }
+
         
         .carousel-container {
             position: relative;
-            perspective: 1400px;
-            margin-bottom: 80px;
+            perspective: 2100px;
+            margin-bottom: 120px;
         }
         
         .carousel {
-            width: clamp(350px, 50vw, 500px);
-            height: clamp(245px, 35vw, 350px);
+            width: clamp(525px, 75vw, 750px);
+            height: clamp(368px, 52.5vw, 525px);
             position: relative;
             transform-style: preserve-3d;
             transition: transform 0.8s cubic-bezier(0.4, 0.0, 0.2, 1);
@@ -121,40 +131,40 @@
             width: 100%;
             height: 100%;
             background: #e8e8e8;
-            border: 2px solid #d0d0d0;
-            border-radius: 12px;
+            border: 3px solid #d0d0d0;
+            border-radius: 18px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: clamp(32px, 6vw, 48px);
+            font-size: clamp(48px, 9vw, 72px);
             font-weight: 300;
             color: #7a7a7a;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 12px 48px rgba(0, 0, 0, 0.1);
             transition: all 0.3s ease;
         }
         
         .carousel-item.active {
-            box-shadow: 0 16px 48px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 24px 72px rgba(0, 0, 0, 0.15);
         }
         
         .item-a {
-            transform: rotateY(0deg) translateZ(clamp(245px, 35vw, 350px));
+            transform: rotateY(0deg) translateZ(clamp(368px, 52.5vw, 525px));
         }
         
         .item-b {
-            transform: rotateY(120deg) translateZ(clamp(245px, 35vw, 350px));
+            transform: rotateY(120deg) translateZ(clamp(368px, 52.5vw, 525px));
         }
         
         .item-f {
-            transform: rotateY(240deg) translateZ(clamp(245px, 35vw, 350px));
+            transform: rotateY(240deg) translateZ(clamp(368px, 52.5vw, 525px));
         }
         
         .nav-button {
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            width: 48px;
-            height: 48px;
+            width: 72px;
+            height: 72px;
             background: rgba(255, 255, 255, 0.9);
             border: none;
             border-radius: 50%;
@@ -162,17 +172,18 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 18px;
-            color: #666;
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+            font-size: 27px;
+            color: #e97132;
+            box-shadow: 0 6px 24px rgba(0, 0, 0, 0.1);
             transition: all 0.3s ease;
             z-index: 10;
+            
         }
         
         .nav-button:hover {
             background: white;
             color: #333;
-            box-shadow: 0 6px 24px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 9px 36px rgba(0, 0, 0, 0.15);
             transform: translateY(-50%) scale(1.05);
         }
         
@@ -181,11 +192,11 @@
         }
         
         .nav-prev {
-            left: -80px;
+            left: -120px;
         }
         
         .nav-next {
-            right: -80px;
+            right: -120px;
         }
         
         .nav-prev::before {
@@ -198,25 +209,25 @@
         
         .cta-button {
             background: #d0d0d0;
-            color: #666;
+            color: #e97132;
             border: none;
-            padding: 18px 36px;
-            border-radius: 8px;
-            font-size: 16px;
+            padding: 27px 54px;
+            border-radius: 12px;
+            font-size: 24px;
             font-weight: 500;
             cursor: pointer;
             transition: all 0.3s ease;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 12px;
             text-decoration: none;
         }
         
         .cta-button:hover {
             background: #c0c0c0;
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
-            transform: translateY(-2px);
+            box-shadow: 0 6px 24px rgba(0, 0, 0, 0.15);
+            transform: translateY(-3px);
         }
         
         .cta-button:active {
@@ -225,7 +236,7 @@
         
         .cta-button::after {
             content: '→';
-            font-size: 18px;
+            font-size: 27px;
         }
         
         @media (max-width: 768px) {
@@ -238,45 +249,46 @@
             }
             
             .nav-button {
-                width: 40px;
-                height: 40px;
-                font-size: 16px;
+                width: 60px;
+                height: 60px;
+                font-size: 24px;
             }
             
             .nav-prev {
-                left: -60px;
+                left: -90px;
             }
             
             .nav-next {
-                right: -60px;
+                right: -90px;
             }
             
             .tagline {
-                margin-bottom: 60px;
+                margin-bottom: 90px;
             }
             
             .carousel-container {
-                margin-bottom: 60px;
+                margin-bottom: 90px;
             }
         }
         
         @media (max-width: 480px) {
             .nav-prev {
-                left: -50px;
+                left: -75px;
             }
             
             .nav-next {
-                right: -50px;
+                right: -75px;
             }
             
             .nav-button {
-                width: 36px;
-                height: 36px;
-                font-size: 14px;
+                width: 54px;
+                height: 54px;
+                font-size: 21px;
             }
         }
-/* Dark overlay */
-#overlay {
+
+        /* Dark overlay */
+        #overlay {
             position: fixed;
             top: 0;
             left: 0;
@@ -285,7 +297,15 @@
             background: rgba(0, 0, 0, 0.5);
             z-index: 999;
         }
-
+        #overlay2 {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
         /* Popup container */
         .popup {
             position: fixed;
@@ -293,11 +313,11 @@
             left: 50%;
             transform: translate(-50%, -50%);
             background: white;
-            padding: 24px;
-            border-radius: 16px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            padding: 36px;
+            border-radius: 24px;
+            box-shadow: 0 15px 45px rgba(0, 0, 0, 0.2);
             z-index: 1000;
-            width: 320px;
+            width: 480px;
             font-family: system-ui, sans-serif;
         }
 
@@ -309,11 +329,11 @@
         /* Close button */
         .close-btn {
             position: absolute;
-            top: 10px;
-            right: 14px;
+            top: 15px;
+            right: 21px;
             background: none;
             border: none;
-            font-size: 20px;
+            font-size: 30px;
             color: #888;
             cursor: pointer;
             transition: color 0.2s;
@@ -324,8 +344,8 @@
 
         /* Popup title */
         .popup h3 {
-            font-size: 20px;
-            margin-bottom: 24px;
+            font-size: 30px;
+            margin-bottom: 36px;
             color: #222;
             text-align: center;
         }
@@ -335,16 +355,17 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 12px 0;
+            padding: 18px 0;
             border-bottom: 1px solid #eee;
+            font-size: 18px;
         }
 
         /* iOS-style toggle switch */
         .switch {
             position: relative;
             display: inline-block;
-            width: 52px;
-            height: 28px;
+            width: 78px;
+            height: 42px;
         }
         .switch input {
             opacity: 0;
@@ -356,7 +377,7 @@
             cursor: pointer;
             background-color: #ccc;
             transition: 0.3s;
-            border-radius: 34px;
+            border-radius: 51px;
             top: 0;
             left: 0;
             right: 0;
@@ -365,10 +386,10 @@
         .slider::before {
             position: absolute;
             content: "";
-            height: 20px;
-            width: 20px;
-            left: 4px;
-            bottom: 4px;
+            height: 30px;
+            width: 30px;
+            left: 6px;
+            bottom: 6px;
             background-color: white;
             border-radius: 50%;
             transition: 0.3s;
@@ -377,14 +398,49 @@
             background-color: #34c759;
         }
         input:checked + .slider::before {
-            transform: translateX(24px);
+            transform: translateX(36px);
         }
 
-    .carousel-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;    /* use 'contain' if you don't want any cropping */
-  display: block;
-  border-radius: inherit; /* keeps the slide’s rounded corners */
-  pointer-events: none;   /* optional: avoids accidental drags */
+        .carousel-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            border-radius: inherit;
+            pointer-events: none;
+        }
+
+         .setting-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid #eee;
+        }
+        .setting-item-2 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 0;
+            border-bottom: 1px solid #eee;
+        }
+.delete-all-btn {
+  background: #ff6b6b;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 14px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  opacity: 1 !important; 
+  transform: scale(1) !important; 
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.delete-all-btn:hover {
+  background: #e63946;
 }

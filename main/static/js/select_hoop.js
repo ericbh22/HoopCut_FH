@@ -40,7 +40,13 @@ let selectedPoints = [];
             // Update UI
             updateUI();
         });
-
+        function toggleInfoPopup() {
+            const overlay = document.getElementById('overlay');
+            const popup = document.getElementById('infoPopup');
+            
+            overlay.classList.toggle('hidden');
+            popup.classList.toggle('hidden');
+        }
         function drawPoint(x, y, pointNumber) {
             const colors = ['#ff4d4f', '#1890ff', '#52c41a']; // modern red, blue, green
             const color = colors[pointNumber - 1];
