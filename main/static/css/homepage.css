@@ -472,6 +472,12 @@ body {
             .carousel-container{
                 margin-bottom: 90px;
             }
+            .cta-button{
+                padding-top: 20px;
+                padding-right: 45px;
+                padding-bottom: 20px;
+                padding-left: 45px;
+            }
         }
         
         @media (max-width: 768px) {
