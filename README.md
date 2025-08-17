@@ -19,6 +19,64 @@ HoopCut combines cutting-edge computer vision with efficient video processing:
 
 ---
 
+## 🚀 Getting Started
+
+### 1. Clone the Repository (if you have a github token) or Download the EXE
+```bash
+git clone https://github.com/ericbh22/HoopCut_FH.git
+cd HoopCut_FH
+```
+
+2. **Create a virtual environment**
+```bash
+# On Windows
+python -m venv venv
+
+# On macOS/Linux/Python 3
+python3 -m venv venv 
+```
+
+3. **Activate virtual environment**
+```bash
+# On macOS/Linux
+source venv/bin/activate
+
+# On Windows
+venv\Scripts\activate
+```
+
+4. **Install dependencies (may take a few minutes)**
+```bash
+pip install -r requirements.txt
+```
+
+
+5. Run the Application
+```bash
+# On Windows
+python main\app.py 
+
+# On macOS/Linux
+python3 main/app.py 
+```
+
+6. Run the Application
+```bash
+Copy "http://127.0.0.1:5000" into your browser or click on it from the terminal
+```
+
+7. Feel free to use our test in provided_test
+
+**Additional Requirements:**
+- Ensure FFMpeg is installed on your system
+- If you see WINERROR, it means your system needs ffmpeg - see this video for a guide https://www.youtube.com/watch?v=K7znsMo_48I
+- If errors occur, verify GPU version of PyTorch is installed
+
+
+The application will be hosted locally and accessible through your web browser. 
+
+---
+
 ## 🧮 Analysis Explanation
 
 To accurately determine shot outcomes, HoopCut employs two mathematical models:
@@ -82,63 +140,6 @@ Built-in three-point features to improve accuracy for longer range shots
 ### 🏷️ Custom Relabeling
 Allows users to relabel mislabeled footage into makes or misses
 
----
-
-## 🚀 Getting Started
-
-### 1. Clone the Repository (if you have a github token) or Download the EXE
-```bash
-git clone https://github.com/ericbh22/HoopCut_FH.git
-cd HoopCut_FH
-```
-
-2. **Create a virtual environment**
-```bash
-# On Windows
-python -m venv venv
-
-# On macOS/Linux/Python 3
-python3 -m venv venv 
-```
-
-3. **Activate virtual environment**
-```bash
-# On macOS/Linux
-source venv/bin/activate
-
-# On Windows
-venv\Scripts\activate
-```
-
-4. **Install dependencies (may take a few minutes)**
-```bash
-pip install -r requirements.txt
-```
-
-
-5. Run the Application
-```bash
-# On Windows
-python main\app.py 
-
-# On macOS/Linux
-python3 main/app.py 
-```
-
-6. Run the Application
-```bash
-Copy "http://127.0.0.1:5000" into your browser or click on it from the terminal
-```
-
-7. Feel free to use our test in provided_test
-
-**Additional Requirements:**
-- Ensure FFMpeg is installed on your system
-- If you see WINERROR, it means your system needs ffmpeg - see this video for a guide https://www.youtube.com/watch?v=K7znsMo_48I
-- If errors occur, verify GPU version of PyTorch is installed
-
-
-The application will be hosted locally and accessible through your web browser. 
 
 ---
 ## 🚀 Optimal Usage and FAQ
