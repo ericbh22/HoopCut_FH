@@ -449,7 +449,7 @@ body {
         @media screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 1000px) and (max-width: 1800px) { 
             .tagline {
                 font-size: 40px;
-                margin-bottom: 45px;
+                margin-bottom: 20px;
             }
             
             .carousel {
@@ -467,6 +467,10 @@ body {
             
             .item-f {
                 transform: rotateY(240deg) translateZ(400px);
+            }
+
+            .carousel-container{
+                margin-bottom: 90px;
             }
         }
         
