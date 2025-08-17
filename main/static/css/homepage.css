@@ -446,7 +446,7 @@ body {
 }
 
 /* Mac Laptop specific styles */
-        @media screen and (-webkit-min-device-pixel-ratio: 1.5) and (min-width: 1024px) and (max-width: 1440px) {
+        @media screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 1000px) and (max-width: 1800px) { 
             .tagline {
                 font-size: 40px;
                 margin-bottom: 45px;
