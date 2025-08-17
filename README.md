@@ -94,10 +94,10 @@ cd HoopCut_FH
 
 2. **Create a virtual environment**
 ```bash
+# On Windows
 python -m venv venv
 
-or depending on version/os
-
+# On macOS/Linux/Python 3
 python3 -m venv venv 
 ```
 
@@ -118,8 +118,10 @@ pip install -r requirements.txt
 
 5. Run the Application
 ```bash
+# On Windows
 python main\app.py 
-or on mac
+
+# On macOS/Linux
 python3 main/app.py 
 ```
 6. Feel free to use our test in provided_test
