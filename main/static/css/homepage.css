@@ -444,3 +444,234 @@ body {
 .delete-all-btn:hover {
   background: #e63946;
 }
+
+/* Mac Laptop specific styles */
+        @media screen and (-webkit-min-device-pixel-ratio: 1.5) and (min-width: 1024px) and (max-width: 1440px) {
+            .tagline {
+                font-size: 40px;
+                margin-bottom: 45px;
+            }
+            
+            .carousel {
+                width: 560px;
+                height: 400px;
+            }
+            
+            .item-a {
+                transform: rotateY(0deg) translateZ(400px);
+            }
+            
+            .item-b {
+                transform: rotateY(120deg) translateZ(400px);
+            }
+            
+            .item-f {
+                transform: rotateY(240deg) translateZ(400px);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 12px 20px;
+            }
+            
+            .brand-name {
+                font-size: 20px;
+            }
+            
+            .nav-button {
+                width: 60px;
+                height: 60px;
+                font-size: 24px;
+            }
+            
+            .nav-prev {
+                left: -90px;
+            }
+            
+            .nav-next {
+                right: -90px;
+            }
+            
+            .tagline {
+                margin-bottom: 90px;
+            }
+            
+            .carousel-container {
+                margin-bottom: 90px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .nav-prev {
+                left: -75px;
+            }
+            
+            .nav-next {
+                right: -75px;
+            }
+            
+            .nav-button {
+                width: 54px;
+                height: 54px;
+                font-size: 21px;
+            }
+        }
+
+        /* Dark overlay */
+        #overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+        #overlay2 {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+        /* Popup container */
+        .popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 36px;
+            border-radius: 24px;
+            box-shadow: 0 15px 45px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            width: 480px;
+            font-family: system-ui, sans-serif;
+        }
+
+        /* Hide class */
+        .hidden {
+            display: none !important;
+        }
+
+        /* Close button */
+        .close-btn {
+            position: absolute;
+            top: 15px;
+            right: 21px;
+            background: none;
+            border: none;
+            font-size: 30px;
+            color: #888;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+        .close-btn:hover {
+            color: #000;
+        }
+
+        /* Popup title */
+        .popup h3 {
+            font-size: 30px;
+            margin-bottom: 36px;
+            color: #222;
+            text-align: center;
+        }
+
+        /* Each setting */
+        .setting-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 18px 0;
+            border-bottom: 1px solid #eee;
+            font-size: 18px;
+        }
+
+        /* iOS-style toggle switch */
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 78px;
+            height: 42px;
+        }
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            background-color: #ccc;
+            transition: 0.3s;
+            border-radius: 51px;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+        .slider::before {
+            position: absolute;
+            content: "";
+            height: 30px;
+            width: 30px;
+            left: 6px;
+            bottom: 6px;
+            background-color: white;
+            border-radius: 50%;
+            transition: 0.3s;
+        }
+        input:checked + .slider {
+            background-color: #34c759;
+        }
+        input:checked + .slider::before {
+            transform: translateX(36px);
+        }
+
+        .carousel-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            border-radius: inherit;
+            pointer-events: none;
+        }
+
+         .setting-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid #eee;
+        }
+        .setting-item-2 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 0;
+            border-bottom: 1px solid #eee;
+        }
+.delete-all-btn {
+  background: #ff6b6b;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 14px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  opacity: 1 !important; 
+  transform: scale(1) !important; 
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.delete-all-btn:hover {
+  background: #e63946;
+}
