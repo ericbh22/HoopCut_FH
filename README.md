@@ -124,10 +124,17 @@ python main\app.py
 # On macOS/Linux
 python3 main/app.py 
 ```
-6. Feel free to use our test in provided_test
+
+6. Run the Application
+```bash
+Copy "http://127.0.0.1:5000" into your browser or click on it from the terminal
+```
+
+7. Feel free to use our test in provided_test
 
 **Additional Requirements:**
 - Ensure FFMpeg is installed on your system
+- If you see WINERROR, it means your system needs ffmpeg - see this video for a guide https://www.youtube.com/watch?v=K7znsMo_48I
 - If errors occur, verify GPU version of PyTorch is installed
 
 
